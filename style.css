@@ -63,3 +63,20 @@ footer {
         padding: 1em;
     }
 }
+
+/* Button Primary Style */
+.btn-primary {
+    display: inline-block;
+    background-color: #004080;
+    color: white;
+    padding: 0.75em 1.5em;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 1.5em;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #002d66;
+}
