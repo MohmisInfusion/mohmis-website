@@ -1,85 +1,78 @@
-/* Base Body Style */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* === RESET & BASE STYLES === */
+* {
   margin: 0;
   padding: 0;
-  background: #f5f7fa;
-  color: #333;
-  line-height: 1.6;
+  box-sizing: border-box;
 }
 
-/* Header */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 1rem;
+}
+
+/* === HEADER === */
 header {
-  background: #004080;
+  background-color: #004080;
   color: white;
-  padding: 2em 1em 1em;
+  padding: 1.5rem 1rem;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 0 0 12px 12px;
 }
 
 header h1 {
-  margin: 0;
-  font-size: 2em;
+  font-size: 2rem;
 }
 
-/* Navigation */
+header p {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* === NAVIGATION (optional section) === */
 nav {
-  margin-top: 1em;
+  margin: 1rem 0;
+  text-align: center;
 }
 
 nav a {
-  margin: 0 15px;
-  color: white;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1em;
+  color: #004080;
+  font-weight: bold;
+  margin: 0 1rem;
 }
 
 nav a:hover {
   text-decoration: underline;
-  color: #cce6ff;
 }
 
-/* Main Content */
-main {
-  padding: 2em;
-  max-width: 1100px;
-  margin: 2em auto 4em;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.06);
-}
-
-main section {
-  margin-bottom: 2.5em;
-}
-
-section h2 {
-  color: #004080;
-  margin-bottom: 0.5em;
-}
-
-/* Portfolio Grid */
+/* === PORTFOLIO GRID SECTION === */
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
 }
 
+/* === PORTFOLIO CARD === */
 .portfolio-card {
   background-color: #f9f9f9;
   padding: 1rem;
   border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
 }
 
 .portfolio-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
+/* === IMAGE INSIDE CARD === */
 .portfolio-image {
   width: 100%;
   height: auto;
@@ -90,12 +83,62 @@ section h2 {
   background-color: #f0f0f0;
 }
 
-.portfolio-card h3,
-.portfolio-card p {
-  text-align: center;
+/* === TEXT INSIDE CARD === */
+.portfolio-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Button Style */
+.portfolio-card p {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* === LINK BUTTON IN CARD === */
+.portfolio-card a {
+  display: inline-block;
+  background-color: #004080;
+  color: white;
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.portfolio-card a:hover {
+  background-color: #002d66;
+}
+
+/* === FORM STYLING === */
+form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+form input,
+form textarea,
+form select {
+  width: 100%;
+  padding: 0.75em;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+form label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* === GENERAL BUTTON === */
 .btn-primary {
   display: inline-block;
   background-color: #004080;
@@ -104,10 +147,22 @@ section h2 {
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
-  margin-top: 1.5em;
   transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
 }
 
 .btn-primary:hover {
   background-color: #002d66;
+}
+
+/* === FOOTER === */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #f1f1f1;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: #555;
+  border-top: 1px solid #ddd;
 }
