@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio - Mohmis Infusion</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>My Portfolio</h1>
+    <div id="nav-placeholder"></div>
+  </header>
+
+  <main>
+    <section class="portfolio-section">
+      <div class="portfolio-item">
+        <img src="images/portfolio1.jpg" alt="Web Design Project" />
+        <h2>Modern Web Design</h2>
+        <p>A responsive website built using HTML, CSS, and JavaScript for a local client.</p>
+      </div>
+
+      <div class="portfolio-item">
+        <img src="images/portfolio2.jpg" alt="Auto Accessories Review" />
+        <h2>Auto Accessories Review</h2>
+        <p>Created a YouTube video review series for top car accessories in Kenya.</p>
+      </div>
+
+      <div class="portfolio-item">
+        <img src="images/portfolio3.jpg" alt="Digital Campaign" />
+        <h2>Digital Campaign</h2>
+        <p>Managed a digital ad campaign for an SME using Facebook and Google Ads.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mohmis Infusion</p>
+    <a href="https://www.youtube.com/@mohmisinfusion" target="_blank">🎥 Visit Our YouTube Channel</a>
+  </footer>
+
+  <script>
+    fetch("navigation.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("nav-placeholder").innerHTML = data;
+      })
+      .catch(err => console.error("Navigation load error:", err));
+  </script>
+</body>
+</html>
