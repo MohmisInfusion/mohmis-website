@@ -9,7 +9,8 @@
 </head>
 <body>
     <header>
-        <h1>Our Services</h1>
+        <h1>Our Services</h1>   
+<div id="nav-placeholder"></div>   
         <nav>
             <a href="index.html">Home</a>
             <a href="services.html">Services</a>
@@ -29,6 +30,15 @@
   <a href="https://www.youtube.com/@mohmisinfusion" target="_blank">
     🎥 Visit Our YouTube Channel
   </a>
-    </footer>
+    </footer>   
+<script>
+  fetch("navigation.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("nav-placeholder").innerHTML = data;
+    })
+    .catch(err => console.error("Navigation load error:", err));
+</script>
+
 </body>
 </html>
