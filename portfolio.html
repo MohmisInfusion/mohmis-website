@@ -1,51 +1,54 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Portfolio - Mohmis Infusion</title>
+  <title>Portfolio - Mohmis Infusion</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <header>
-    <h1>My Portfolio</h1>
-    <div id="nav-placeholder"></div>
+    <h1>Mohmis Infusion Portfolio</h1>
+    <p>Scientific Writing | Auto Solutions | Digital Projects</p>
   </header>
 
   <main>
-    <section class="portfolio-grid">
-      <article class="portfolio-item">
-        <img src="images/project1.jpg" alt="Project 1">
-        <h3>Project Title 1</h3>
-        <p>Short description of what this project involved or solved.</p>
-      </article>
-      <article class="portfolio-item">
-        <img src="images/project2.jpg" alt="Project 2">
-        <h3>Project Title 2</h3>
-        <p>Brief overview of tools or skills applied in this project.</p>
-      </article>
-      <article class="portfolio-item">
-        <img src="images/project3.jpg" alt="Project 3">
-        <h3>Project Title 3</h3>
-        <p>A summary of how this project helped a client or solved a problem.</p>
-      </article>
+    <section class="projects-section">
+      <h2>A Pick of Our Top Performing Projects</h2>
+
+      <div class="project">
+        <h3>🌐 Mohmis Website (Live)</h3>
+        <p>Visit our flagship website, showcasing our work in auto accessories, digital services, and client request forms.</p>
+        <a href="https://mohmisinfusion.github.io/mohmis-website/" target="_blank">Visit Site</a>
+      </div>
+
+      <div class="project">
+        <h3>🧪 Essential Oils for Mosquito Repellent</h3>
+        <p>This MSc-level project focused on eco-friendly repellents using plant-based essential oils. I contributed as a scientific writer and consultant.</p>
+        <a href="docs/mosquito_repellent_portfolio_sample.pdf" target="_blank">View PDF</a>
+      </div>
+
+      <div class="project">
+        <h3>📈 Robstar Autocare Sales Records</h3>
+        <p>Created monthly sales tracking formats and service follow-up templates for Robstar Autocare, improving customer tracking and workshop transparency.</p>
+      </div>
+
+      <div class="project">
+        <h3>🔧 Fumigation Chemical Safety Brochure</h3>
+        <p>Designed educational marketing material during COVID-19 to guide clients on safe fumigation product usage during licensed sales campaigns.</p>
+      </div>
+
+      <div class="project">
+        <h3>📊 Customer Order Dashboard UI</h3>
+        <p>Prototyped an admin panel layout for managing customer orders, payment alerts, and SMS confirmations.</p>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Mohmis Infusion</p>
-    <a href="https://www.youtube.com/@mohmisinfusion" target="_blank">🎥 Visit Our YouTube Channel</a>
+    <p>© 2025 Mohmis Infusion. All rights reserved.</p>
   </footer>
 
-  <script>
-    fetch("navigation.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("nav-placeholder").innerHTML = data;
-      })
-      .catch(err => console.error("Navigation load error:", err));
-  </script>
 </body>
   </html>
-          
