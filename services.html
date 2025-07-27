@@ -1,44 +1,53 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Mohmis Infusion</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - Mohmis Infusion</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
-    <header>
-        <h1>Our Services</h1>   
-<div id="nav-placeholder"></div>   
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-    <main>
-        <ul>
-            <li>📘 Academic Support & Tutoring (Chemistry, Writing)</li>
-            <li>💻 Web Design & Branding</li>
-            <li>📱 Digital Marketing & Advertising</li>
-            <li>🚗 Auto Accessories & Reviews</li>
-        </ul>
-    </main>
-    <footer>
-  <p>&copy; 2025 Mohmis Infusion</p>
-  <a href="https://www.youtube.com/@mohmisinfusion" target="_blank">
-    🎥 Visit Our YouTube Channel
-  </a>
-    </footer>   
-<script>
-  fetch("navigation.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("nav-placeholder").innerHTML = data;
-    })
-    .catch(err => console.error("Navigation load error:", err));
-</script>
+  <header>
+    <h1>Our Services</h1>
 
+    <!-- Navigation placeholder (loaded from navigation.html) -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Optional fallback navigation if fetch fails -->
+    <noscript>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </noscript>
+  </header>
+
+  <main>
+    <ul>
+      <li>📘 Academic Support & Tutoring (Chemistry, Writing)</li>
+      <li>💻 Web Design & Branding</li>
+      <li>📱 Digital Marketing & Advertising</li>
+      <li>🚗 Auto Accessories & Reviews</li>
+    </ul>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mohmis Infusion</p>
+    <a href="https://www.youtube.com/@mohmisinfusion" target="_blank">
+      🎥 Visit Our YouTube Channel
+    </a>
+  </footer>
+
+  <script>
+    // Load navigation bar from external HTML file
+    fetch("navigation.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("nav-placeholder").innerHTML = data;
+      })
+      .catch(err => console.error("Navigation load error:", err));
+  </script>
 </body>
 </html>
