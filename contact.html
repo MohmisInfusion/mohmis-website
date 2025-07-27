@@ -3,34 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact - Mohmis Infusion</title>
+  <title>Contact Us | Mohmis Infusion</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="contact-header">
-    <h1>Contact Us</h1>
-  </div>
+  <header>
+    <h1>Mohmis Infusion</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+  </header>
 
-  <div class="contact-card">
-    <p><i class="fas fa-phone"></i> <a href="tel:+254704696483">+254704696483</a></p>
-    <p><i class="fas fa-envelope"></i> <a href="mailto:mohmisinfusion@gmail.com">mohmisinfusion@gmail.com</a></p>
-    <p><i class="fas fa-map-marker-alt"></i> <a href="https://maps.google.com/?q=Nairobi,Nakuru" target="_blank">Nairobi & Nakuru, Kenya</a></p>
-  </div>
+  <main>
+    <section class="contact-section">
+      <h2>Send Us a Message</h2>
+      <form action="https://formspree.io/f/meozgrbb" method="POST">
+        <label for="name">Name:</label><br />
+        <input type="text" id="name" name="name" required /><br />
 
-  <div class="contact-form">
-    <form action="mailto:mohmisinfusion@gmail.com" method="POST" enctype="text/plain">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" required /><br />
+
+        <label for="message">Message:</label><br />
+        <textarea id="message" name="message" rows="5" required></textarea><br />
+
+        <input type="text" name="_honey" style="display:none" />
+        <input type="hidden" name="_next" value="thank-you.html" />
+
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 Mohmis Infusion</p>
+    <p>&copy; 2025 Mohmis Infusion | All rights reserved.</p>
+    <p>Contact: <a href="mailto:mohmisinfusion@gmail.com">mohmisinfusion@gmail.com</a> | Phone: <a href="tel:+254704696483">+254 704 696 483</a></p>
   </footer>
+
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      if (body.classList.contains('theme-dark')) {
+        body.classList.remove('theme-dark');
+        body.classList.add('theme-blue');
+      } else if (body.classList.contains('theme-blue')) {
+        body.classList.remove('theme-blue');
+        body.classList.add('theme-light');
+      } else {
+        body.classList.remove('theme-light');
+        body.classList.add('theme-dark');
+      }
+    }
+  </script>
 </body>
-      </html>
+  </html>
