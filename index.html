@@ -150,7 +150,15 @@
     allowfullscreen>  
   </iframe>  
 </div>
-
-</footer>  
+</footer>   
+<script>
+  fetch("navigation.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("nav-placeholder").innerHTML = data;
+    })
+    .catch(err => console.error("Navigation load error:", err));
+</script>
+  
 </body>  
     </html>
