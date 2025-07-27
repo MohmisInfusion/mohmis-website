@@ -2,83 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us - Mohmis Infusion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohmis Infusion | Home</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <header>
-    <h1>Contact Mohmis Infusion</h1>
+    <h1>Mohmis Infusion</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
   </header>
 
   <main>
-    <section>
-      <h2>Get in Touch</h2>
-      <form action="https://formsubmit.co/mohmisinfusion@gmail.com" method="POST">
-        <label for="name">Name:</label><br />
-        <input type="text" id="name" name="name" required /><br />
-
-        <label for="email">Email:</label><br />
-        <input type="email" id="email" name="email" required /><br />
-
-        <label for="message">Message:</label><br />
-        <textarea id="message" name="message" rows="5" required></textarea><br />
-
-        <!-- Spam bot trap -->
-        <input type="text" name="_honey" style="display:none" />
-
-        <!-- Redirect after success -->
-        <input type="hidden" name="_next" value="thank-you.html" />
-
-        <button type="submit" class="btn-primary">Send Message</button>
-      </form>
+    <section class="hero">
+      <h2>Welcome to Mohmis Infusion</h2>
+      <p>We explore the fast-paced world of machines that move the world – from the street to the sky.</p>
+      <a href="https://mohmisinfusion.github.io/mohmis-website/" target="_blank" class="btn-primary">View Live Site</a>
     </section>
   </main>
 
   <footer>
     <p>&copy; 2025 Mohmis Infusion | All rights reserved.</p>
-
-    <p>
-      <a href="https://www.youtube.com/@mohmisinfusion" target="_blank">
-        🎥 Visit Our YouTube Channel
-      </a>
-    </p>
-
-    <!-- YouTube Subscribe Button -->
-    <div id="subscribe-btn" style="margin-top: 1rem;">
-      <div class="g-ytsubscribe"
-           data-channelid="UCIn8qtdpx8dRIlyH3-_moYw"
-           data-layout="default"
-           data-count="default">
-      </div>
-    </div>
-
-    <p>
-      Contact: 
-      <a href="mailto:mohmisinfusion@gmail.com">mohmisinfusion@gmail.com</a> | 
-      Phone: <a href="tel:+254704696483">+254 704 696 483</a>
-    </p>
-
-    <!-- YouTube Video Embed -->
-    <div style="margin-top: 1rem;">
-      <iframe width="320" height="180"
-        src="https://www.youtube.com/embed?listType=user_uploads&list=UCXYt4btuEtpiJ3VYF78Zc8g"
-        title="Latest YouTube Videos"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-    </div>
+    <p>Contact: <a href="mailto:mohmisinfusion@gmail.com">mohmisinfusion@gmail.com</a> | Phone: <a href="tel:+254704696483">+254 704 696 483</a></p>
   </footer>
 
-  <!-- Load YouTube Subscribe Button Script -->
-  <script src="https://apis.google.com/js/platform.js"></script>
-
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      if (body.classList.contains('theme-dark')) {
+        body.classList.remove('theme-dark');
+        body.classList.add('theme-blue');
+      } else if (body.classList.contains('theme-blue')) {
+        body.classList.remove('theme-blue');
+        body.classList.add('theme-light');
+      } else {
+        body.classList.remove('theme-light');
+        body.classList.add('theme-dark');
+      }
+    }
+  </script>
 </body>
   </html>
