@@ -1,85 +1,90 @@
+/* Base font size for better scaling */
+html {
+  font-size: 18px;
+}
 
-/* Base Body Style */
+/* Body styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px; /* Increased from default */
-  line-height: 1.6;
   margin: 0;
   padding: 0;
   background: #f4f4f4;
   color: #333;
+  line-height: 1.6;
 }
 
 /* Header */
 header {
   background: #004080;
-  color: white;
-  padding: 1rem;
+  color: #fff;
+  padding: 1rem 0;
   text-align: center;
 }
 
 header h1 {
-  font-size: 1.8rem;
+  margin: 0.5rem 0;
+  font-size: 2rem;
+}
+
+header p {
+  margin: 0;
+  font-size: 1.1rem;
 }
 
 /* Navigation */
 nav {
-  background-color: #0066cc;
-  padding: 0.5rem;
+  background: #0066cc;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  justify-content: center;
 }
 
 nav a {
   color: white;
+  padding: 0.75rem 1.5rem;
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  background-color: #0055aa;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  transition: background 0.3s ease;
 }
 
 nav a:hover {
-  background-color: #003366;
+  background: #005bb5;
 }
 
-/* Main Content */
+/* Main content */
 main {
-  padding: 1.5rem;
-  font-size: 1rem;
+  padding: 2rem 1rem;
+  max-width: 960px;
+  margin: auto;
+}
+
+main h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+main p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
 }
 
 main ul {
-  list-style: none;
-  padding: 0;
+  list-style-type: disc;
+  padding-left: 1.5rem;
 }
 
 main li {
-  background-color: white;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Portfolio Images */
-.portfolio-images {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 1.5rem;
-}
-
-.portfolio-images img {
-  width: 100%;
-  max-width: 300px; /* Mobile friendly */
+/* Responsive images */
+img {
+  max-width: 100%;
   height: auto;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  display: block;
+  margin-bottom: 1rem;
+  border-radius: 8px;
 }
 
 /* Footer */
@@ -88,34 +93,108 @@ footer {
   color: white;
   text-align: center;
   padding: 1rem;
-  margin-top: 2rem;
+  font-size: 1rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
-footer a {
-  color: #cce6ff;
+/* Cards or Section Boxes */
+.card {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+/* Buttons */
+.nav-button {
+  background-color: #0066cc;
+  color: white;
+  padding: 0.5rem 1rem;
   text-decoration: none;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  margin: 0.5rem;
 }
 
-footer a:hover {
-  text-decoration: underline;
+.nav-button:hover {
+  background-color: #004080;
 }
 
-/* Responsive Text Sizes */
+/* Contact form */
+form {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+form button {
+  background-color: #0066cc;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #004080;
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
-  body {
-    font-size: 17px; /* Slightly bigger on small screens */
-  }
-
-  header h1 {
-    font-size: 1.5rem;
+  nav {
+    flex-direction: column;
   }
 
   nav a {
-    font-size: 1rem;
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid #005bb5;
   }
 
   main {
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.75rem;
+  }
+
+  header p,
+  main p,
+  main li {
     font-size: 1rem;
   }
-}
 
+  form input,
+  form textarea {
+    font-size: 1rem;
+  }
+
+  form button {
+    font-size: 1rem;
+  }
+  }
