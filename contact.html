@@ -1,28 +1,36 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Mohmis Infusion</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Mohmis Infusion</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <h1>Contact Us</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
-    <main>
-        <p>📞 Phone: 0704696483</p>
-        <p>📧 Email: info@mohmisinfusion.co.ke</p>
-        <p>📍 Location: Nairobi & Nakuru, Kenya</p>
-    </main>
-    <footer>
-        <p>&copy; 2025 Mohmis Infusion</p>
-    </footer>
+  <div class="contact-header">
+    <h1>Contact Us</h1>
+  </div>
+
+  <div class="contact-card">
+    <p><i class="fas fa-phone"></i> <a href="tel:+254704696483">0704696483</a></p>
+    <p><i class="fas fa-envelope"></i> <a href="mailto:info@mohmisinfusion.co.ke">info@mohmisinfusion.co.ke</a></p>
+    <p><i class="fas fa-map-marker-alt"></i> <a href="https://maps.google.com/?q=Nairobi,Nakuru" target="_blank">Nairobi & Nakuru, Kenya</a></p>
+  </div>
+
+  <div class="contact-form">
+    <form action="mailto:info@mohmisinfusion.co.ke" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>© 2025 Mohmis Infusion</p>
+  </footer>
 </body>
-</html>
+      </html>
