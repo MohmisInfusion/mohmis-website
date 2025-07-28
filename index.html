@@ -19,15 +19,15 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />  
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CGYP08P0K0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CGYP08P0K0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-CGYP08P0K0');
-</script>
+    gtag('config', 'G-CGYP08P0K0');
+  </script>
 
 </head>  
 <body>  
@@ -121,12 +121,11 @@
     </section>  
 
     <section class="contact-section"> 
-      <body>
-  <!-- CTA message-->
-  <div class="cta-message">
-    Need help with a project, business, or idea?
-Share your details below — whether it’s writing, marketing, schoolwork, or a website like this, we’ve got you covered...
-  </div>
+      <!-- CTA message-->
+      <div class="cta-message">
+        Need help with a project, business, or idea?
+        Share your details below — whether it’s writing, marketing, schoolwork, or a website like this, we’ve got you covered...
+      </div>
       <h2>Send Us a Message</h2>  
       <form action="https://formspree.io/f/meozgrbb" method="POST">  
         <label for="name">Name:</label><br />  
@@ -149,29 +148,58 @@ Share your details below — whether it’s writing, marketing, schoolwork, or a
     </section>  
   </main>  
 
-<footer>
-  <p>&copy; 2025 Mohmis Infusion | All rights reserved.</p>
+  <footer>
+    <p>&copy; 2025 Mohmis Infusion | All rights reserved.</p>
 
-  <p>
-    <a href="mailto:mohmisinfusion@gmail.com">📧 mohmisinfusion@gmail.com</a> |
-    <a href="tel:+254704696483">📞 +254 704 696 483</a>
-  </p>
+    <p>
+      <a href="mailto:mohmisinfusion@gmail.com">📧 mohmisinfusion@gmail.com</a> |
+      <a href="tel:+254704696483">📞 +254 704 696 483</a>
+    </p>
 
-  <div class="social-links">
-    <a href="https://wa.me/message/BWWDCOJDEYZEM1" target="_blank">💬 WhatsApp</a> |
-    <a href="https://www.facebook.com/mose.htj.m" target="_blank">📘 Facebook</a> |
-    <a href="https://www.linkedin.com/in/moses-m-gitonga-0227b3140" target="_blank">💼 LinkedIn</a> |
-    <a href="https://www.youtube.com/@mohmisinfusion" target="_blank">🎥 YouTube</a>
-  </div>
+    <div class="social-links">
+      <a href="https://wa.me/message/BWWDCOJDEYZEM1" target="_blank">💬 WhatsApp</a> |
+      <a href="https://www.facebook.com/mose.htj.m" target="_blank">📘 Facebook</a> |
+      <a href="https://www.linkedin.com/in/moses-m-gitonga-0227b3140" target="_blank">💼 LinkedIn</a> |
+      <a href="https://www.youtube.com/@mohmisinfusion" target="_blank">🎥 YouTube</a>
+    </div>
 
-  <!-- Embedded YouTube Video -->
-  <div style="margin-top: 1rem;">
-    <iframe width="320" height="180"
-      src="https://www.youtube.com/embed?listType=user_uploads&list=mohmisinfusion"
-      title="Latest YouTube Video"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-  </div>
+    <!-- Lazy-loading YouTube Video -->
+    <div class="youtube-lazy" data-id="mohmisinfusion" style="margin-top: 1rem;"></div>
   </footer>
+
+  <!-- Lazy-load YouTube embed script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var lazyVideos = document.querySelectorAll('.youtube-lazy');
+
+      lazyVideos.forEach(function(lazyVideo) {
+        var videoId = lazyVideo.getAttribute('data-id');
+
+        var thumbnailDiv = document.createElement('div');
+        thumbnailDiv.className = 'youtube-thumbnail';
+        thumbnailDiv.style.backgroundImage = 'url(https://img.youtube.com/vi/' + videoId + '/hqdefault.jpg)';
+
+        var playButton = document.createElement('button');
+        playButton.className = 'youtube-play';
+        playButton.setAttribute('aria-label', 'Play Video');
+
+        lazyVideo.appendChild(thumbnailDiv);
+        lazyVideo.appendChild(playButton);
+
+        lazyVideo.addEventListener('click', function() {
+          var iframe = document.createElement('iframe');
+          iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0');
+          iframe.setAttribute('frameborder', '0');
+          iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+          iframe.setAttribute('allowfullscreen', '');
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+
+          lazyVideo.innerHTML = '';
+          lazyVideo.appendChild(iframe);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
