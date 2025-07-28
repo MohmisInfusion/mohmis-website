@@ -19,16 +19,16 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />  
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CGYP08P0K0"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-CGYP08P0K0');
+  <!-- Google Tag Manager (deferred) -->
+  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-CGYP08P0K0"></script>
+  <script defer>
+    window.addEventListener('load', function () {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-CGYP08P0K0');
+    });
   </script>
-
 </head>  
 <body>  
   <header>  
@@ -37,25 +37,22 @@
   </header>  
 
   <!-- Navigation Loader -->
-  <script>
-    fetch("navigation.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("nav-placeholder").innerHTML = data;
-      })
-      .catch(err => console.error("Navigation load error:", err));
+  <script defer>
+    window.addEventListener('DOMContentLoaded', function () {
+      fetch("navigation.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("nav-placeholder").innerHTML = data;
+        })
+        .catch(err => console.error("Navigation load error:", err));
+    });
   </script>
 
   <main>  
     <section>  
       <h2>Your Trusted Partner in Academic, Digital & Branding Solutions</h2>  
-      <p>
-        At <strong>Mohmis Infusion</strong>, we fuse academic depth with digital intelligence to help students, startups, and consultants communicate, grow, and deliver measurable impact.
-      </p>  
-      <p>
-        Founded in 2021 to empower students, professionals, and small businesses through digital solutions. Our commitment is to provide personalized support tailored to your unique goals, helping you grow confidently in today’s competitive market.
-      </p>  
-
+      <p><strong>Mohmis Infusion</strong> fuses academic depth with digital intelligence to help students, startups, and consultants communicate, grow, and deliver measurable impact.</p>  
+      <p>Founded in 2021 to empower students, professionals, and small businesses through digital solutions. Our commitment is to provide personalized support tailored to your unique goals, helping you grow confidently in today’s competitive market.</p>  
       <ul>  
         <li><strong>✍️ Copywriting & Content Writing</strong> – Clear, persuasive content for websites, products, and social media.</li>  
         <li><strong>📚 Academic Writing & Research Projects</strong> – Essays, proposals, lab reports, submissions, and more.</li>  
@@ -121,10 +118,8 @@
     </section>  
 
     <section class="contact-section"> 
-      <!-- CTA message-->
       <div class="cta-message">
-        Need help with a project, business, or idea?
-        Share your details below — whether it’s writing, marketing, schoolwork, or a website like this, we’ve got you covered...
+        Need help with a project, business, or idea? Share your details below — whether it’s writing, marketing, schoolwork, or a website like this, we’ve got you covered...
       </div>
       <h2>Send Us a Message</h2>  
       <form action="https://formspree.io/f/meozgrbb" method="POST">  
@@ -137,10 +132,7 @@
         <label for="message">Message:</label><br />  
         <textarea id="message" name="message" rows="5" required></textarea><br />  
 
-        <!-- Spam bot trap -->  
         <input type="text" name="_honey" style="display:none" />  
-
-        <!-- Redirect after success -->  
         <input type="hidden" name="_next" value="thank-you.html" />  
 
         <button type="submit" class="btn-primary">Send Message</button>  
@@ -150,12 +142,10 @@
 
   <footer>
     <p>&copy; 2025 Mohmis Infusion | All rights reserved.</p>
-    
     <p>
       <a href="mailto:mohmisinfusion@gmail.com">📧 mohmisinfusion@gmail.com</a> |
       <a href="tel:+254704696483">📞 +254 704 696 483</a>
     </p>
-
     <div class="social-links">
       <a href="https://wa.me/message/BWWDCOJDEYZEM1" target="_blank">💬 WhatsApp</a> |
       <a href="https://www.facebook.com/mose.htj.m" target="_blank">📘 Facebook</a> |
@@ -163,55 +153,42 @@
       <a href="https://www.youtube.com/@mohmisinfusion" target="_blank">🎥 YouTube</a>
     </div>
 
-    <!-- Lazy-loading YouTube Video -->
-    <div class="youtube-lazy" data-id="mohmisinfusion" style="margin-top: 1rem;"></div>
-  
-<div>
-  <!-- Lazy-load YouTube embed script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var lazyVideos = document.querySelectorAll('.youtube-lazy');
-
-      lazyVideos.forEach(function(lazyVideo) {
-        var videoId = lazyVideo.getAttribute('data-id');
-
-        var thumbnailDiv = document.createElement('div');
-        thumbnailDiv.className = 'youtube-thumbnail';
-        thumbnailDiv.style.backgroundImage = 'url(https://img.youtube.com/vi/' + videoId + '/hqdefault.jpg)';
-
-        var playButton = document.createElement('button');
-        playButton.className = 'youtube-play';
-        playButton.setAttribute('aria-label', 'Play Video');
-
-        lazyVideo.appendChild(thumbnailDiv);
-        lazyVideo.appendChild(playButton);
-
-        lazyVideo.addEventListener('click', function() {
-          var iframe = document.createElement('iframe');
-          iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0');
-          iframe.setAttribute('frameborder', '0');
-          iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-          iframe.setAttribute('allowfullscreen', '');
-          iframe.style.width = '100%';
-          iframe.style.height = '100%';
-
-          lazyVideo.innerHTML = '';
-          lazyVideo.appendChild(iframe);
+    <!-- Lazy YouTube Script -->
+    <script defer>
+      document.addEventListener('DOMContentLoaded', function () {
+        var lazyVideos = document.querySelectorAll('.youtube-lazy');
+        lazyVideos.forEach(function (lazyVideo) {
+          var videoId = lazyVideo.getAttribute('data-id');
+          var thumbnailDiv = document.createElement('div');
+          thumbnailDiv.className = 'youtube-thumbnail';
+          thumbnailDiv.style.backgroundImage = 'url(https://img.youtube.com/vi/' + videoId + '/hqdefault.jpg)';
+          var playButton = document.createElement('button');
+          playButton.className = 'youtube-play';
+          playButton.setAttribute('aria-label', 'Play Video');
+          lazyVideo.appendChild(thumbnailDiv);
+          lazyVideo.appendChild(playButton);
+          lazyVideo.addEventListener('click', function () {
+            var iframe = document.createElement('iframe');
+            iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0');
+            iframe.setAttribute('frameborder', '0');
+            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+            iframe.setAttribute('allowfullscreen', '');
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            lazyVideo.innerHTML = '';
+            lazyVideo.appendChild(iframe);
+          });
         });
       });
-    });
-  </script>
-    <!-- Embedded YouTube Video -->
-  <div style="margin-top: 1rem;">
-    <iframe width="320" height="180"
-      src="https://www.youtube.com/embed?listType=user_uploads&list=mohmisinfusion"
-      title="Latest YouTube Video"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-  </div>
- 
+    </script>
+
+    <!-- Lazy-load YouTube Embed Container -->
+    <div class="youtube-lazy" data-id="mohmisinfusion" style="margin-top: 1rem;"></div>
+
+    <!-- Static fallback YouTube iframe (optional) -->
+    <noscript>
+      <iframe width="320" height="180" src="https://www.youtube.com/embed?listType=user_uploads&list=mohmisinfusion" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </noscript>
   </footer>
 </body>
 </html>
