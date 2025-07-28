@@ -124,7 +124,20 @@ footer {
 .nav-button:hover {
   background-color: #004080;
 }
-
+/* CTA message */
+.cta-message {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #222;
+  border: 2px solid #007BFF;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  max-width: 600px; /* Optional: limits width for better readability */
+  margin-left: auto; /* Center horizontally */
+  margin-right: auto;
+  text-align: center;
+  }
 /* Contact form */
 form {
   background: white;
