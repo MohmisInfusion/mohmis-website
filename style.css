@@ -15,6 +15,14 @@ header {
   text-align: center;
 }
 
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #ffffff;
+  visibility: visible;
+  display: block;
+}
+
 nav {
   background: #003366;
   color: white;
