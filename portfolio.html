@@ -20,13 +20,13 @@
       <div class="project">
         <h3>🌐 Mohmis Website (Live)</h3>
         <p>Visit our flagship website, showcasing our work in auto accessories, digital services, and client request forms.</p>
-        <a href="https://mohmisinfusion.github.io/mohmis-website/" target="_blank">Visit Site</a>
+        <a href="https://mohmisinfusion.github.io/mohmis-website/" target="_blank" rel="noopener noreferrer">Visit Site</a>
       </div>
 
       <div class="project">
         <h3>🧪 Essential Oils for Mosquito Repellent</h3>
         <p>This MSc-level project focused on eco-friendly repellents using plant-based essential oils. I contributed as a scientific writer and consultant.</p>
-        <a href="docs/mosquito_repellent_portfolio_sample.pdf" target="_blank">View PDF</a>
+        <a href="docs/mosquito_repellent_portfolio_sample.pdf" target="_blank" rel="noopener noreferrer">View PDF</a>
       </div>
 
       <div class="project">
@@ -55,17 +55,18 @@
     </p>
 
     <div class="social-links">
-      <a href="https://wa.me/message/BWWDCOJDEYZEM1" target="_blank">💬 WhatsApp</a> |
-      <a href="https://www.facebook.com/mose.htj.m" target="_blank">📘 Facebook</a> |
-      <a href="https://www.linkedin.com/in/moses-m-gitonga-0227b3140" target="_blank">💼 LinkedIn</a> |
-      <a href="https://www.youtube.com/@mohmisinfusion" target="_blank">🎥 YouTube</a>
+      <a href="https://wa.me/message/BWWDCOJDEYZEM1" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a> |
+      <a href="https://www.facebook.com/mose.htj.m" target="_blank" rel="noopener noreferrer">📘 Facebook</a> |
+      <a href="https://www.linkedin.com/in/moses-m-gitonga-0227b3140" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a> |
+      <a href="https://www.youtube.com/@mohmisinfusion" target="_blank" rel="noopener noreferrer">🎥 YouTube</a>
     </div>
 
-    <!-- Embedded YouTube Video (Still Present) -->
+    <!-- Lazy-loaded YouTube Video -->
     <div style="margin-top: 1rem;">
       <iframe width="320" height="180"
         src="https://www.youtube.com/embed?listType=user_uploads&list=mohmisinfusion"
         title="Latest YouTube Video"
+        loading="lazy"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
@@ -73,25 +74,14 @@
     </div>
   </footer>
 
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CGYP08P0K0"></script>
   <script>
-    // Load navigation bar from external HTML file
-    fetch("navigation.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("nav-placeholder").innerHTML = data;
-      })
-      .catch(err => console.error("Navigation load error:", err));
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-CGYP08P0K0');
   </script>
-  
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CGYP08P0K0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-CGYP08P0K0');
-</script>
 
 </body>
-  </html>
+</html>
