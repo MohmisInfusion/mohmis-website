@@ -190,5 +190,20 @@
       <iframe width="320" height="180" src="https://www.youtube.com/embed?listType=user_uploads&list=mohmisinfusion" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </noscript>
   </footer>
+  <button id="backToTop" title="Go to top">⬆️ Top</button>
+  <script>
+  window.onscroll = function() {
+    const btn = document.getElementById("backToTop");
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  document.getElementById("backToTop").onclick = function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  };
+  </script>
 </body>
 </html>
