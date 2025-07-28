@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us | Mohmis Infusion</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Defer Font Awesome (lazy-loaded when needed) -->
+  <link rel="preload" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"></noscript>
 </head>
 <body>
   <header>
@@ -17,17 +20,6 @@
       </ul>
     </nav>
     <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
-    
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CGYP08P0K0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-CGYP08P0K0');
-</script>
-
   </header>
 
   <main>
@@ -91,12 +83,23 @@
       }
     }
 
-    fetch("navigation.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("nav-placeholder").innerHTML = data;
-      })
-      .catch(err => console.error("Navigation load error:", err));
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch("navigation.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("nav-placeholder").innerHTML = data;
+        })
+        .catch(err => console.error("Navigation load error:", err));
+    });
+  </script>
+
+  <!-- Defer Google tag (gtag.js) to avoid render-blocking -->
+  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-CGYP08P0K0"></script>
+  <script defer>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CGYP08P0K0');
   </script>
 </body>
-  </html>
+</html>
