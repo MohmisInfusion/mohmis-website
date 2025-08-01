@@ -182,21 +182,28 @@
       });
     </script>
 
-    <!-- Lazy-load YouTube Embed Container -->
-    <div class="youtube-lazy" data-id="mohmisinfusion" style="margin-top: 1rem;"></div>
+    <!-- Latest YouTube Video Embed -->
+<div style="text-align:center; margin-top: 1rem;">
+  <iframe 
+    width="100%" 
+    height="315" 
+    src="https://www.youtube.com/embed?listType=user_uploads&list=UCIn8qtdpx8dRIlyH3-_moYw" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+  </iframe>
+</div>
 
-    <!-- Static fallback YouTube iframe (optional) -->
-    <noscript>
-      <iframe width="320" height="180" src="https://www.youtube.com/embed?listType=user_uploads&list=mohmisinfusion" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </noscript>
-  </footer>
+<!-- Back to Top Button -->
 <div style="text-align: center; margin-top: 30px;">
   <button id="backToTop" title="Go to top">⬆️ Back to Top</button>
 </div>
+
 <script>
-  document.getElementById("backToTop").onclick = function() {
-    window.scrollTo({top: 0, behavior: 'smooth'});
+  document.getElementById("backToTop").onclick = function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-  </script>
+</script>
+    
 </body>
 </html>
