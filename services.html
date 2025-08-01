@@ -58,36 +58,37 @@
   </a>
   </div>
     
-    <!-- Lazy YouTube Embed -->
+   <!-- Lazy YouTube Embed for Latest Video -->
 <div style="margin-top: 1rem; display: flex; justify-content: center;">
-  <div class="youtube-lazy" style="
+  <div style="
     position: relative;
     width: 100%;
     max-width: 560px;
     aspect-ratio: 16 / 9;
     cursor: pointer;
     border-radius: 8px;
-    overflow: hidden;">
-    
+    overflow: hidden;"
+    onclick="window.open('https://youtu.be/xAjJiQMU6Zw', '_blank')">
+
     <img 
-      src="https://img.youtube.com/vi?listType=user_uploads&list=mohmisinfusion/0.jpg" 
+      src="https://img.youtube.com/vi/xAjJiQMU6Zw/hqdefault.jpg" 
       alt="Latest YouTube Video" 
       loading="lazy"
       style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-    
+
     <div style="
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.4);
       display: flex;
       justify-content: center;
       align-items: center;">
-      
-      <span style="font-size: 40px; color: white;">▶</span>
+      <span style="font-size: 60px; color: white;">▶</span>
     </div>
   </div>
 </div>
+    
 </footer>
   <script>
     // Navigation fetch
