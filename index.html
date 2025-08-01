@@ -153,44 +153,76 @@
       <a href="https://www.youtube.com/@mohmisinfusion" target="_blank">🎥 YouTube</a>
     </div>
 
-    <!-- Lazy-load YouTube Embed Container for Latest Video -->
-  <div class="youtube-lazy" data-id="xAjJiQMU6Zw" style="margin-top: 1rem; position: relative; width: 100%; max-width: 560px; height: 315px; cursor: pointer; border-radius: 8px; overflow: hidden;">
-  </div>
-
-  <!-- Static fallback YouTube iframe (optional) -->
-  <noscript>
-    <iframe width="320" height="180" src="https://www.youtube.com/embed/xAjJiQMU6Zw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </noscript>
-
-  </footer>
-  <!-- Latest YouTube Video Embed (Auto-updated via RSS Feed without API) -->
-  <div id="youtube-latest" style="text-align:center; margin-top: 2rem;"></div>
-
+    <!-- Lazy-load YouTube Script -->
   <script defer>
-    document.addEventListener("DOMContentLoaded", function () {
-      fetch("https://www.youtube.com/feeds/videos.xml?channel_id=UCIn8qtdpx8dRIlyH3-_moYw")
-        .then(response => response.text())
-        .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
-        .then(data => {
-          const latestVideo = data.querySelector("entry > link");
-          if (latestVideo) {
-            const videoUrl = latestVideo.getAttribute("href");
-            const videoId = videoUrl.split("v=")[1];
-
-            const iframe = document.createElement("iframe");
-            iframe.width = "100%";
-            iframe.height = "315";
-            iframe.src = `https://www.youtube.com/embed/${videoId}`;
-            iframe.frameBorder = "0";
-            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-            iframe.allowFullscreen = true;
-
-            const container = document.getElementById("youtube-latest");
-            if (container) container.appendChild(iframe);
-          }
+    document.addEventListener('DOMContentLoaded', function () {
+      var lazyVideos = document.querySelectorAll('.youtube-lazy');
+      lazyVideos.forEach(function (lazyVideo) {
+        var videoId = lazyVideo.getAttribute('data-id');
+        var thumbnailDiv = document.createElement('div');
+        thumbnailDiv.className = 'youtube-thumbnail';
+        thumbnailDiv.style.backgroundImage = 'url(https://img.youtube.com/vi/' + videoId + '/hqdefault.jpg)';
+        thumbnailDiv.style.width = '100%';
+        thumbnailDiv.style.height = '100%';
+        thumbnailDiv.style.backgroundSize = 'cover';
+        thumbnailDiv.style.backgroundPosition = 'center';
+        thumbnailDiv.style.borderRadius = '8px';
+        
+        var playButton = document.createElement('button');
+        playButton.className = 'youtube-play';
+        playButton.setAttribute('aria-label', 'Play Video');
+        playButton.style.position = 'absolute';
+        playButton.style.top = '50%';
+        playButton.style.left = '50%';
+        playButton.style.transform = 'translate(-50%, -50%)';
+        playButton.style.background = 'rgba(0,0,0,0.6)';
+        playButton.style.border = 'none';
+        playButton.style.borderRadius = '50%';
+        playButton.style.width = '60px';
+        playButton.style.height = '60px';
+        playButton.style.cursor = 'pointer';
+        playButton.style.outline = 'none';
+        playButton.style.color = 'white';
+        playButton.style.fontSize = '30px';
+        playButton.textContent = '▶';
+        
+        lazyVideo.style.position = 'relative';
+        lazyVideo.appendChild(thumbnailDiv);
+        lazyVideo.appendChild(playButton);
+        
+        lazyVideo.addEventListener('click', function () {
+          var iframe = document.createElement('iframe');
+          iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0');
+          iframe.setAttribute('frameborder', '0');
+          iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+          iframe.setAttribute('allowfullscreen', '');
+          iframe.style.width = '100%';
+          iframe.style.height = '100%';
+          iframe.style.borderRadius = '8px';
+          lazyVideo.innerHTML = '';
+          lazyVideo.appendChild(iframe);
         });
+      });
     });
   </script>
+
+  <script>
+    document.getElementById("backToTop").onclick = function() {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    };
+  </script>
+
+    <!-- Latest YouTube Video Embed -->
+<div style="text-align:center; margin-top: 1rem;">
+  <iframe 
+    width="100%" 
+    height="315" 
+    src="https://www.youtube.com/embed?listType=user_uploads&list=UCIn8qtdpx8dRIlyH3-_moYw" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+  </iframe>
+</div>
 
   <!-- Back to Top Button -->
   <div style="text-align: center; margin-top: 30px;">
