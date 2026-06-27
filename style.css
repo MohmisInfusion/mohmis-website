@@ -239,3 +239,90 @@ color:#fff;
 padding:25px;
 border-radius:15px;
 }
+/* ===========================
+   PREMIUM KEYCHAIN SHOP
+=========================== */
+
+.product-showcase{
+    padding:60px 20px;
+    background:#f8f9fa;
+    text-align:center;
+}
+
+.product-showcase h2{
+    font-size:2rem;
+    color:#222;
+    margin-bottom:10px;
+}
+
+.shop-intro{
+    max-width:700px;
+    margin:auto;
+    margin-bottom:35px;
+    color:#666;
+    font-size:18px;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.product-card{
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+    transition:.3s ease;
+}
+
+.product-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+.product-card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+
+.product-card h3{
+    margin:15px 0 8px;
+    color:#222;
+}
+
+.price{
+    color:#0b8d2d;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.buy-btn{
+    display:inline-block;
+    margin:20px;
+    padding:12px 22px;
+    background:#25D366;
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.buy-btn:hover{
+    background:#128C7E;
+}
+
+.offer-box{
+    margin-top:45px;
+    padding:25px;
+    border-radius:15px;
+    background:#111;
+    color:white;
+}
+
+.offer-box h3{
+    color:#FFD700;
+}
