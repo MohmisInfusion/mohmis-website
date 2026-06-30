@@ -228,78 +228,8 @@ Order Now
       </form>  
     </section>  
   </main>  
+</main>
 
-  <footer>
-    <p>&copy; 2025 Mohmis Infusion | All rights reserved.</p>
-    <p>
-      <a href="mailto:mohmisinfusion@gmail.com">📧 mohmisinfusion@gmail.com</a> |
-      <a href="tel:+254704696483">📞 +254 704 696 483</a>
-    </p>
-    <div class="social-links">
-      <a href="https://wa.me/message/BWWDCOJDEYZEM1" target="_blank">💬 WhatsApp</a> |
-      <a href="https://www.facebook.com/mose.htj.m" target="_blank">📘 Facebook</a> |
-      <a href="https://www.linkedin.com/in/moses-m-gitonga-0227b3140" target="_blank">💼 LinkedIn</a> |
-      <a href="https://www.youtube.com/@mohmisinfusion" target="_blank">🎥 YouTube</a>
-    </div>
-
-    <!-- Lazy-load YouTube Script -->
-  <script defer>
-    document.addEventListener('DOMContentLoaded', function () {
-      var lazyVideos = document.querySelectorAll('.youtube-lazy');
-      lazyVideos.forEach(function (lazyVideo) {
-        var videoId = lazyVideo.getAttribute('data-id');
-        var thumbnailDiv = document.createElement('div');
-        thumbnailDiv.className = 'youtube-thumbnail';
-        thumbnailDiv.style.backgroundImage = 'url(https://img.youtube.com/vi/' + videoId + '/hqdefault.jpg)';
-        thumbnailDiv.style.width = '100%';
-        thumbnailDiv.style.height = '100%';
-        thumbnailDiv.style.backgroundSize = 'cover';
-        thumbnailDiv.style.backgroundPosition = 'center';
-        thumbnailDiv.style.borderRadius = '8px';
-        
-        var playButton = document.createElement('button');
-        playButton.className = 'youtube-play';
-        playButton.setAttribute('aria-label', 'Play Video');
-        playButton.style.position = 'absolute';
-        playButton.style.top = '50%';
-        playButton.style.left = '50%';
-        playButton.style.transform = 'translate(-50%, -50%)';
-        playButton.style.background = 'rgba(0,0,0,0.6)';
-        playButton.style.border = 'none';
-        playButton.style.borderRadius = '50%';
-        playButton.style.width = '60px';
-        playButton.style.height = '60px';
-        playButton.style.cursor = 'pointer';
-        playButton.style.outline = 'none';
-        playButton.style.color = 'white';
-        playButton.style.fontSize = '30px';
-        playButton.textContent = '▶';
-        
-        lazyVideo.style.position = 'relative';
-        lazyVideo.appendChild(thumbnailDiv);
-        lazyVideo.appendChild(playButton);
-        
-        lazyVideo.addEventListener('click', function () {
-          var iframe = document.createElement('iframe');
-          iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0');
-          iframe.setAttribute('frameborder', '0');
-          iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-          iframe.setAttribute('allowfullscreen', '');
-          iframe.style.width = '100%';
-          iframe.style.height = '100%';
-          iframe.style.borderRadius = '8px';
-          lazyVideo.innerHTML = '';
-          lazyVideo.appendChild(iframe);
-        });
-      });
-    });
-  </script>
-
-  <script>
-    document.getElementById("backToTop").onclick = function() {
-      window.scrollTo({top: 0, behavior: 'smooth'});
-    };
-  </script>
 <!-- ========================= -->
 <!-- Welcome Video -->
 <!-- ========================= -->
@@ -344,6 +274,22 @@ Order Now
 
 </section>
 
+<footer>
+  <p>&copy; 2025 Mohmis Infusion | All rights reserved.</p>
+
+  <p>
+    <a href="mailto:mohmisinfusion@gmail.com">📧 mohmisinfusion@gmail.com</a> |
+    <a href="tel:+254704696483">📞 +254 704 696 483</a>
+  </p>
+
+  <div class="social-links">
+    <a href="https://wa.me/message/BWWDCOJDEYZEM1" target="_blank">💬 WhatsApp</a> |
+    <a href="https://www.facebook.com/mose.htj.m" target="_blank">📘 Facebook</a> |
+    <a href="https://www.linkedin.com/in/moses-m-gitonga-0227b3140" target="_blank">💼 LinkedIn</a> |
+    <a href="https://www.youtube.com/@mohmisinfusion" target="_blank">🎥 YouTube</a>
+  </div>
+</footer>
+
 <script>
 document.getElementById("backToTop").addEventListener("click", function () {
   window.scrollTo({
@@ -352,5 +298,6 @@ document.getElementById("backToTop").addEventListener("click", function () {
   });
 });
 </script>
+
 </body>
 </html>
